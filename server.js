@@ -18,6 +18,7 @@ wss.on('connection', (ws) => {
   ws.on('close', () => console.log('Client disconnected'));
   ws.on('message', function incoming(data) {
     // Broadcast to everyone else.
+    console.log(data);
     wss.clients.forEach(function each(client) {
       if (client !== ws && client.readyState === WebSocket.OPEN) {
         client.send(data);
