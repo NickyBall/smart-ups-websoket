@@ -6,7 +6,7 @@
       var ws = new WebSocket(HOST);
       var el = document.getElementById('server-time');
       ws.onmessage = function (event) {
-        el.innerHTML = HOST + ' => Server time: ' + event.data;
+        el.innerHTML = HOST + ' => Received: ' + event.data;
       };
     </script>
   </body>
